@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NeonButton } from '../components/NeonButton';
+import { FAQItem } from '../components/FAQItem';
 import { Ticket, Timer, Trophy, HelpCircle, DollarSign, History } from 'lucide-react';
 
 const AFFILIATE_LINK = "https://www.shufflers.io/en/link/9cb114c2241119143011/";
@@ -121,6 +122,31 @@ export const Lottery: React.FC = () => {
             </table>
           </div>
       </section>
+
+      {/* FAQ Section */}
+      <div className="bg-neon-card/50 border border-white/10 rounded-xl p-6 md:p-8">
+          <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-white">
+              <HelpCircle className="text-neon-blue" /> LOTTERY FAQ
+          </h3>
+          <div className="space-y-2">
+              <FAQItem 
+                  question="How do I participate in the Weekly Lottery?" 
+                  answer="Simply navigate to the Lottery page on Shuffle.com using our link. Tickets cost $5 each, and you can select your own numbers or use Quick Pick." 
+              />
+              <FAQItem 
+                  question="When are the winners announced?" 
+                  answer="Draws take place every Sunday at 00:00 UTC. Results are published instantly on the platform and verifyable via the Provably Fair system." 
+              />
+               <FAQItem 
+                  question="What happens if I win?" 
+                  answer="Prizes are automatically credited to your Shuffle balance immediately after the draw. No claiming process is required." 
+              />
+              <FAQItem 
+                  question="Can I buy multiple tickets?" 
+                  answer="Yes, there is no limit to the number of tickets you can purchase for a single draw. Buying more tickets increases your statistical chance of winning." 
+              />
+          </div>
+      </div>
     </div>
   );
 };

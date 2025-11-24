@@ -1,28 +1,9 @@
 import React, { useState } from 'react';
 import { NeonButton } from '../components/NeonButton';
-import { User, Mail, Lock, Gift, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { FAQItem } from '../components/FAQItem';
+import { User, Mail, Lock, Gift, HelpCircle } from 'lucide-react';
 
 const AFFILIATE_LINK = "https://www.shufflers.io/en/link/9cb114c2241119143011/";
-
-const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
-        <div className="border-b border-white/10 last:border-0">
-            <button 
-                onClick={() => setIsOpen(!isOpen)}
-                className="w-full py-4 flex items-center justify-between text-left focus:outline-none hover:text-neon-blue transition-colors"
-            >
-                <span className="font-bold text-sm">{question}</span>
-                {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-            </button>
-            {isOpen && (
-                <div className="pb-4 text-gray-400 text-sm leading-relaxed">
-                    {answer}
-                </div>
-            )}
-        </div>
-    );
-};
 
 export const Register: React.FC = () => {
   const [formState, setFormState] = useState({ username: '', email: '', password: '', promo: '' });
